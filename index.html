@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Untuk Dzahwa</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="kitten" viewBox="0 0 100 100">
+      <path d="M16 44 L20 6 L46 24 Z" fill="currentColor"/>
+      <path d="M84 44 L80 6 L54 24 Z" fill="currentColor"/>
+      <path d="M22 36 L24 16 L38 26 Z" fill="#ffb3c8"/>
+      <path d="M78 36 L76 16 L62 26 Z" fill="#ffb3c8"/>
+      <ellipse cx="50" cy="58" rx="38" ry="34" fill="currentColor"/>
+      <path d="M50 26 V36 M42 28 L44 36 M58 28 L56 36" stroke="#000" stroke-opacity=".12" stroke-width="3" stroke-linecap="round"/>
+      <g class="eye"><ellipse cx="35" cy="54" rx="6" ry="8" fill="#2b2230"/><circle cx="37" cy="51" r="2.3" fill="#fff"/></g>
+      <g class="eye"><ellipse cx="65" cy="54" rx="6" ry="8" fill="#2b2230"/><circle cx="67" cy="51" r="2.3" fill="#fff"/></g>
+      <circle cx="24" cy="68" r="6" fill="#ff8fa8" opacity=".45"/>
+      <circle cx="76" cy="68" r="6" fill="#ff8fa8" opacity=".45"/>
+      <path d="M46 65 L54 65 L50 70 Z" fill="#ff7a9c"/>
+      <path d="M50 70 Q46 76 41 73 M50 70 Q54 76 59 73" stroke="#2b2230" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <path d="M10 62 L28 66 M10 72 L28 71 M90 62 L72 66 M90 72 L72 71" stroke="#fff" stroke-opacity=".8" stroke-width="1.5" stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="sp" viewBox="-6 -6 12 12"><path d="M0 -5 L1.5 -1.5 L5 0 L1.5 1.5 L0 5 L-1.5 1.5 L-5 0 L-1.5 -1.5 Z"/></symbol>
+    <symbol id="ht" viewBox="-10 -10 20 20"><path d="M0 8 C-12 -1 -6 -10 0 -4 C6 -10 12 -1 0 8Z"/></symbol>
+    <symbol id="st" viewBox="-10 -10 20 20"><path d="M0 -8 L2.4 -2.5 8 -2.2 3.6 1.4 5 7 0 4 -5 7 -3.6 1.4 -8 -2.2 -2.4 -2.5Z"/></symbol>
+    <symbol id="mn" viewBox="0 0 20 20"><path d="M13 3 A8 8 0 1 0 17 14 A7 7 0 0 1 13 3Z"/></symbol>
+    <symbol id="pw" viewBox="0 0 24 24"><ellipse cx="12" cy="16" rx="6" ry="5"/><circle cx="5" cy="9" r="2.4"/><circle cx="10" cy="5" r="2.4"/><circle cx="15" cy="5" r="2.4"/><circle cx="20" cy="9" r="2.4"/></symbol>
+    <symbol id="sq" viewBox="0 0 60 12"><path d="M2 6 q7 -9 14 0 t14 0 t14 0 t14 0"/></symbol>
+  </defs>
+</svg>
+
+<audio id="bgm" src="bye.mp3" loop preload="auto"></audio>
+<div id="gate">
+  <svg viewBox="0 0 100 100" style="color:#f4a259"><use href="#kitten"/></svg>
+  <h1 style="margin:0">Untuk <span>Dzahwa</span></h1>
+  <p class="sub" style="margin:0 0 8px">Ada sesuatu yang disiapkan Andry untukmu.</p>
+  <button id="enter" type="button">Buka</button>
+</div>
+
+<main>
+  <h1>Hai, <span>Dzahwa</span></h1>
+  <p class="sub">Andry sengaja membuat halaman ini hanya untukmu.</p>
+
+  <div class="hero">
+    <svg style="color:#f4a259"><use href="#kitten"/></svg>
+    <svg style="color:#b8b8c8"><use href="#kitten"/></svg>
+    <svg style="color:#f6e3c4"><use href="#kitten"/></svg>
+  </div>
+  <p id="bubble" class="sub" style="margin-top:12px">Ketuk kucingnya, mereka membawa pesan dari Andry.</p>
+
+  <section class="card" id="reflect">
+    <h2>Renungan untukmu</h2>
+    <svg id="lineDoodle" class="lineDoodle" viewBox="0 0 120 70"></svg>
+    <div id="lineTag" class="tag"></div>
+    <div id="line">Ketuk tombol di bawah ya.</div>
+    <button id="next" type="button">Renungan berikutnya</button>
+  </section>
+
+  <section class="card" id="gallerySec">
+    <h2>Anabul yang mewakili perasaanku</h2>
+    <p class="sub" id="galleryHint" style="margin-bottom:12px">Ketuk setiap kartu untuk melihatnya.</p>
+    <div class="grid" id="gallery"></div>
+  </section>
+
+  <section class="card" id="fateSec">
+    <h2>Pilih satu kartu takdir</h2>
+    <p class="sub" style="margin-bottom:0">Ketuk kartu untuk membukanya.</p>
+    <div class="picks" id="picks"></div>
+  </section>
+
+  <section class="card" id="letterSec">
+    <h2>Surat kecil dari Andry</h2>
+    <button id="open" class="env" type="button" aria-label="Buka surat">
+      <svg viewBox="0 0 120 84">
+        <rect x="6" y="24" width="108" height="56" rx="5" fill="#fff" stroke="#8c5a73" stroke-width="2.5"/>
+        <path d="M6 78 L48 50 M114 78 L72 50" stroke="#8c5a73" stroke-width="2" fill="none"/>
+        <g class="flap"><path d="M6 24 L60 62 L114 24 Z" fill="#ffd1dc" stroke="#8c5a73" stroke-width="2.5" stroke-linejoin="round"/><path d="M60 52 C46 40 50 32 60 40 C70 32 74 40 60 52Z" fill="#ff5c8a"/></g>
+        <path d="M18 8 l2 5 5 2 -5 2 -2 5 -2 -5 -5 -2 5 -2z M100 4 l2 5 5 2 -5 2 -2 5 -2 -5 -5 -2 5 -2z" fill="none" stroke="#ff5c8a" stroke-width="1.6" stroke-linejoin="round"/>
+      </svg>
+      <span>Ketuk amplopnya</span>
+    </button>
+    <div id="letter">
+      <div id="letterBody"></div>
+      <svg id="letterSticker" class="sticker" viewBox="-10 -10 20 20"><path d="M0 8 C-12 -1 -6 -10 0 -4 C6 -10 12 -1 0 8Z"/></svg>
+      <svg class="stamp" viewBox="0 0 44 54"><rect x="2" y="2" width="40" height="50" stroke-dasharray="3 2"/><use href="#kitten" x="8" y="9" width="28" height="28" style="color:#f4a259"/><path class="ln" d="M12 45 h20" stroke-linecap="round"/></svg>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Simulasi pintu air perasaan</h2>
+    <p class="sub" style="margin-bottom:0">Geser untuk membuka pintu air, lalu lihat apa yang terjadi.</p>
+    <svg viewBox="0 -64 300 214" style="width:100%;max-width:420px;margin-top:10px" aria-label="Simulasi pintu air">
+      <defs><clipPath id="jetClip"><polygon id="jetClipPoly" points="130,130 150,130 150,130"/></clipPath><linearGradient id="jetGrad" gradientUnits="userSpaceOnUse" x1="130" y1="0" x2="192" y2="0"><stop offset="0" stop-color="#7cc4ff" stop-opacity=".95"/><stop offset="1" stop-color="#7cc4ff" stop-opacity="0"/></linearGradient></defs>
+      <circle class="dd" cx="272" cy="-12" r="8"/>
+      <path class="dd" d="M272 -26 V-23 M272 2 V-1 M258 -12 H261 M283 -12 H286 M262 -22 L264 -20 M282 -22 L280 -20 M262 -2 L264 -4 M282 -2 L280 -4"/>
+      <g transform="translate(46 -8)"><path class="dd" d="M170 -8 q-9 0 -9 -7 q0 -7 8 -7 q3 -8 13 -5 q9 -3 12 5 q8 1 7 8 q0 6 -7 6 z"/></g>
+      <rect id="up" x="0" y="40" width="130" height="90" fill="#4aa8ff" opacity=".75"/>
+      <rect id="down" x="150" y="130" width="150" height="0" fill="#4aa8ff" opacity=".75"/>
+      <path d="M14 90 q5 -5 10 0 t10 0 t10 0 M70 104 q5 -5 10 0 t10 0 t10 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+      <polygon id="jet" points="130,130 150,130 150,130" fill="url(#jetGrad)" opacity="0"/>
+      <g clip-path="url(#jetClip)"><path id="flow" class="flow" d=""/></g>
+      <g id="splash" opacity="0">
+        <circle class="spl" cx="0" cy="0" r="2.2"/><circle class="spl s2" cx="9" cy="-2" r="1.6"/><circle class="spl s3" cx="18" cy="0" r="2"/>
+      </g>
+      <g id="panel">
+        <rect x="130" y="40" width="20" height="90" fill="#8aa0b5" stroke="#4d5f73" stroke-width="1.2"/>
+        <path d="M130 58 H150 M130 76 H150 M130 94 H150 M130 112 H150" stroke="#4d5f73" stroke-width="1.2"/>
+        <path d="M134 49 V125 M146 49 V125" stroke="#e6edf3" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="0 18"/>
+        <rect x="136" y="35" width="8" height="5" fill="#4d5f73"/>
+        <rect x="130" y="126" width="20" height="4" fill="#4d5f73"/>
+      </g>
+      <rect x="122" y="-26" width="8" height="156" fill="#566678"/>
+      <rect x="150" y="-26" width="8" height="156" fill="#566678"/>
+      <path d="M126 -20 V124 M154 -20 V124" stroke="#7d8fa3" stroke-width="1.2" stroke-dasharray="6 5"/>
+      <rect x="116" y="-32" width="48" height="9" rx="2" fill="#566678"/>
+      <line id="stem" x1="140" y1="36" x2="140" y2="-42" stroke="#4d5f73" stroke-width="3"/>
+      <rect x="130" y="-42" width="20" height="10" rx="2" fill="#7d8fa3" stroke="#4d5f73"/>
+      <g id="wheel">
+        <circle cx="140" cy="-50" r="8" fill="none" stroke="#4d5f73" stroke-width="2.4"/>
+        <path d="M140 -58 V-42 M132 -50 H148 M134.3 -55.7 L145.7 -44.3 M145.7 -55.7 L134.3 -44.3" stroke="#4d5f73" stroke-width="1.6"/>
+        <circle cx="140" cy="-50" r="2" fill="#4d5f73"/>
+      </g>
+      <rect x="0" y="130" width="300" height="20" fill="#8c6b4f"/>
+      <rect x="112" y="130" width="56" height="9" fill="#a8a8a8"/>
+      <g id="boat">
+        <g class="boat">
+          <svg x="22" y="-6" width="42" height="42" viewBox="0 0 100 100" style="overflow:visible">
+            <use href="#kitten" style="color:#f4a259"/>
+            <path d="M28 36 Q50 4 72 36 Z" fill="#ffd23f"/>
+            <rect x="24" y="33" width="52" height="6" rx="3" fill="#f2b705"/>
+          </svg>
+          <path d="M14 36 H72 L64 48 H22 Z" fill="#ff8fa8" stroke="#7a5c44" stroke-width="1.5"/>
+          <rect class="dd" x="66" y="-4" width="52" height="20" rx="8"/>
+          <path class="dd" d="M72 16 l-6 6 l12 -4"/>
+          <text id="catSay" class="dt" x="74" y="10">Tahan!</text>
+        </g>
+      </g>
+      <g id="fish" opacity="0">
+        <g class="swim">
+          <ellipse cx="0" cy="0" rx="9" ry="5" fill="#ffb347" stroke="#5b4331" stroke-width="1.2"/>
+          <path d="M9 0 L16 -5 L16 5 Z" fill="#ffb347" stroke="#5b4331" stroke-width="1.2" stroke-linejoin="round"/>
+          <circle cx="-4" cy="-1" r="1.3" fill="#2b2230"/>
+        </g>
+      </g>
+      <g id="love" class="fade">
+        <g transform="translate(190 50)"><path class="wob" d="M0 3 C-8 -4 -4 -10 0 -5 C4 -10 8 -4 0 3Z" fill="#ff5c8a"/></g>
+        <g transform="translate(228 34)"><path class="wob" d="M0 3 C-8 -4 -4 -10 0 -5 C4 -10 8 -4 0 3Z" fill="#ff5c8a"/></g>
+        <g transform="translate(262 52)"><path class="wob" d="M0 3 C-8 -4 -4 -10 0 -5 C4 -10 8 -4 0 3Z" fill="#ff5c8a"/></g>
+      </g>
+    </svg>
+    <input id="gateRange" type="range" min="0" max="100" value="0" aria-label="Bukaan pintu air">
+    <div id="damInfo"></div>
+    <div id="damMsg"></div>
+  </section>
+
+  <section class="card">
+    <h2>Analisis kecocokan</h2>
+    <p class="sub" style="margin-bottom:0">Model machine learning: klasifikasi biner "cocok" atau "tidak cocok" untuk Andry dan Dzahwa.</p>
+    <div id="epochLabel" class="mono" style="margin-top:10px">Model belum dilatih.</div>
+    <button id="calc" type="button" style="margin-top:10px">Latih model</button>
+
+    <svg class="plot" viewBox="0 0 320 180" aria-label="Kurva loss training dan validasi">
+      <line class="ax" x1="36" y1="14" x2="36" y2="146"/>
+      <line class="ax" x1="36" y1="146" x2="304" y2="146"/>
+      <line class="gr" x1="36" y1="80" x2="304" y2="80"/>
+      <text class="tx" x="6" y="12">loss</text>
+      <text class="tx" x="268" y="162">epoch</text>
+      <polyline id="trainLine" class="lt" points=""/>
+      <polyline id="valLine" class="lt lv" points=""/>
+      <line class="lt" x1="150" y1="28" x2="170" y2="28"/>
+      <text class="tx" x="174" y="31">train</text>
+      <line class="lt lv" x1="212" y1="28" x2="232" y2="28"/>
+      <text class="tx" x="236" y="31">validasi</text>
+      <svg x="252" y="42" width="46" height="46" viewBox="0 0 100 100" style="overflow:visible">
+        <use href="#kitten" style="color:#b8b8c8"/>
+        <circle cx="35" cy="54" r="12" fill="none" stroke="#2b2230" stroke-width="3"/>
+        <circle cx="65" cy="54" r="12" fill="none" stroke="#2b2230" stroke-width="3"/>
+        <path d="M47 54 H53" stroke="#2b2230" stroke-width="3"/>
+      </svg>
+      <path class="dd wob" d="M62 30 l2 5 5 2 -5 2 -2 5 -2 -5 -5 -2 5 -2 z"/>
+      <path class="dd wob" d="M104 56 l2 5 5 2 -5 2 -2 5 -2 -5 -5 -2 5 -2 z"/>
+      <g id="noOverfit" class="fade">
+        <text class="dt" x="130" y="100">overfit? enggak dong</text>
+        <path class="dd" d="M170 106 q14 6 12 20 m0 0 l-5 -6 m5 6 l6 -4"/>
+      </g>
+    </svg>
+
+    <svg class="plot" viewBox="0 0 320 170" aria-label="Plot PCA embedding">
+      <line class="ax" x1="30" y1="10" x2="30" y2="150"/>
+      <line class="ax" x1="30" y1="150" x2="310" y2="150"/>
+      <text class="tx" x="4" y="14">PC2</text>
+      <text class="tx" x="280" y="164">PC1</text>
+      <circle cx="228" cy="18" r="3.6" fill="#ff5c8a"/><text class="tx" x="236" y="21">Andry</text>
+      <circle cx="228" cy="31" r="3.6" fill="#4aa8ff"/><text class="tx" x="236" y="34">Dzahwa</text>
+      <circle cx="228" cy="44" r="3.6" fill="#9a8f99"/><text class="tx" x="236" y="47">lainnya</text>
+      <g id="pts"></g>
+      <g id="pairMark" class="fade">
+        <ellipse class="dd" cx="171" cy="81" rx="42" ry="30" stroke-dasharray="4 4"/>
+        <text class="dt" x="84" y="40">Kita di sini</text>
+        <path class="dd" d="M150 44 q12 2 10 12 m0 0 l-4 -5 m4 5 l5 -4"/>
+        <g transform="translate(236 86) scale(1.5)"><path class="wob" d="M0 3 C-8 -4 -4 -10 0 -5 C4 -10 8 -4 0 3Z" fill="#ff5c8a"/></g>
+        <path class="dd wob" d="M60 24 l2 5 5 2 -5 2 -2 5 -2 -5 -5 -2 5 -2 z"/>
+      </g>
+    </svg>
+
+    <div class="mono" style="margin-top:14px">Feature importance (SHAP)</div>
+    <div class="mono" style="font-size:.7rem;opacity:.8">rata-rata |nilai SHAP|, semakin panjang semakin berpengaruh pada prediksi</div>
+    <div id="featWrap"><div id="feat"></div><div id="featHint" class="mono">Fitur dihitung setelah pelatihan selesai.</div></div>
+
+    <div id="verdict" class="fade" style="margin-top:14px">
+      <div style="font-weight:700;font-size:1.1rem">Prediksi: <span style="color:var(--accent)">COCOK</span></div>
+      <div class="prob"><i id="probFill"></i></div>
+      <div class="mono">P(cocok) = 0,999 | P(tidak cocok) = 0,001</div>
+      <div class="chips" id="chips"></div>
+      <svg id="doneDoodle" class="fade" viewBox="0 0 160 90" style="width:55%;max-width:200px;margin-top:8px">
+        <svg x="52" y="22" width="52" height="52" viewBox="0 0 100 100" style="overflow:visible">
+          <use href="#kitten" style="color:#f6e3c4"/>
+          <path d="M30 34 L50 -8 L70 34 Z" fill="#ff5c8a"/>
+          <circle cx="50" cy="-8" r="5" fill="#ffd23f"/>
+        </svg>
+        <path class="dd" d="M20 20 q4 -6 8 0 t8 0 M120 14 q4 -6 8 0 t8 0 M28 66 q4 -6 8 0 t8 0 M118 64 q4 -6 8 0 t8 0"/>
+        <path class="dd wob" d="M126 40 l2 5 5 2 -5 2 -2 5 -2 -5 -5 -2 5 -2 z"/>
+        <text class="dt" x="14" y="46" style="font-size:14px">Lulus!</text>
+      </svg>
+    </div>
+  </section>
+
+  <section class="card" id="askSec">
+    <h2>Satu pertanyaan penting</h2>
+    <p class="sub" style="margin-bottom:0">Dzahwa, kamu suka sama aku atau enggak?</p>
+    <div id="arena">
+      <button id="yes" class="hb" type="button"><svg viewBox="0 0 100 90"><path d="M50 84 C-12 40 14 -4 50 24 C86 -4 112 40 50 84Z"/></svg><span>Ya</span></button>
+      <button id="no" class="hb alt" type="button"><svg viewBox="0 0 100 90"><path d="M50 84 C-12 40 14 -4 50 24 C86 -4 112 40 50 84Z"/></svg><span>Ya</span></button>
+    </div>
+    <svg viewBox="0 0 240 40" style="width:70%;max-width:260px;margin-top:6px" aria-hidden="true"><text class="dt" x="120" y="16" text-anchor="middle" style="font-size:14px">Ya + Ya = Ya</text><path class="dd" d="M60 26 q10 -8 20 0 t20 0 t20 0 t20 0 t20 0"/></svg>
+    <div id="reveal">Dua pilihan, satu jawaban. Rupanya semesta pun sepakat denganmu. Kabari Aku ya.</div>
+  </section>
+
+  <footer>Dibuat oleh Andry Pria Hebat, dengan niat tulus dan sedikit nekat.<br><button id="theme" class="ghost" type="button">Ganti mode terang atau gelap</button><button id="music" class="ghost" type="button">Putar musik</button></footer>
+</main>
+
+<script src="js/content.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
